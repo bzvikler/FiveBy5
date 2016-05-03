@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3f51b5"
+    >
+
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customize your Workout "
+            android:id="@+id/details"
+            android:layout_gravity="center_horizontal"
+            android:elegantTextHeight="true"
+            android:typeface="normal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Repetitions"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/Name"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Muscular Endurence (12 to 15)"
+                android:id="@+id/endurance"
+                android:layout_gravity="center_horizontal"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Strength (8 to 10)"
+                android:id="@+id/strength"
+                android:layout_gravity="center_horizontal"
+                android:checked="false" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Equipment"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/equipment"
+            android:textSize="20dp"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Free Weights"
+                android:id="@+id/weights"
+                android:layout_gravity="center_horizontal"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body Weight"
+                android:id="@+id/body"
+                android:layout_gravity="center_horizontal"
+                android:checked="false" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/angry_btn"
+
+            android:text="Start Workout "
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshape"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
