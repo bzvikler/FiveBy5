@@ -10,7 +10,10 @@
         android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Material"
+        android:transitionGroup="false"
+        android:touchscreenBlocksFocus="false">
 
         <TextView
             android:layout_marginTop="10dp"
@@ -30,9 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="Repetitions"
-            android:layout_marginLeft="100dp"
             android:id="@+id/Name"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -55,7 +58,7 @@
                 android:id="@+id/strength"
                 android:layout_gravity="center_horizontal"
                 android:checked="false"
-                android:theme="@style/AppTheme" />
+                android:clickable="false" />
         </LinearLayout>
 
         <TextView
@@ -63,10 +66,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="Equipment"
-            android:layout_marginLeft="100dp"
             android:id="@+id/equipment"
             android:textSize="20dp"
-            />
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -93,19 +95,17 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/angry_btn"
-
-            android:text="Start Workout "
-            android:textColor="#FFFFFF"
-            android:textSize="17sp"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/buttonshape"
+            android:text="Start Workout"
+            android:id="@+id/start_workout_button"
             android:layout_gravity="center_horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp" />
+            android:theme="@android:style/Widget.Material.Button"
+            android:layout_marginTop="30dp"
+            android:textAppearance="@color/accent_material_dark"
+            android:elegantTextHeight="false"
+            android:clickable="true"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -3,21 +3,21 @@ package com.example.benzvikler.fiveby5;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.example.benzvikler.fiveby5.model.AllExercises;
 import com.example.benzvikler.fiveby5.model.Exercise;
-import com.example.benzvikler.fiveby5.model.ExerciseSet;
 import com.example.benzvikler.fiveby5.model.Workout;
 
 public class Main2Activity extends AppCompatActivity {
 
     private Workout theWorkout = new Workout();
     private AllExercises allExercises = AllExercises.getInstance();     // all Exercises implements iterable
+    private Boolean weightsOrBody = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class Main2Activity extends AppCompatActivity {
         final RadioButton endurance = (RadioButton) findViewById(R.id.endurance);
         final RadioButton weights = (RadioButton) findViewById(R.id.weights);
         final RadioButton body = (RadioButton) findViewById(R.id.body);
+        final Button start_workout = (Button) findViewById(R.id.start_workout_button);
 
         endurance.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,9 +95,7 @@ public class Main2Activity extends AppCompatActivity {
                 weights.setChecked(true);
                 body.setChecked(false);
                 AllExercises.getInstance().filterWeightsOrBody(1);
-                Intent i = new Intent(getBaseContext(), MainActivity.class);
-                i.putExtra("weightsOrBody", true);
-                startActivity(i);
+                weightsOrBody = true;
             }
         });
 
@@ -106,10 +105,16 @@ public class Main2Activity extends AppCompatActivity {
                 body.setChecked(true);
                 weights.setChecked(false);
                 AllExercises.getInstance().filterWeightsOrBody(0);
-                Intent i = new Intent(getBaseContext(), MainActivity.class);
-                i.putExtra("weightsOrBody", false);
-                startActivity(i);
+                weightsOrBody = false;
+            }
+        });
 
+        start_workout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getBaseContext(), MainActivity.class);
+                i.putExtra("weightsOrBody", weightsOrBody);
+                startActivity(i);
             }
         });
     }
