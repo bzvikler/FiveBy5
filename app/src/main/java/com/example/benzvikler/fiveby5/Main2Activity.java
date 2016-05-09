@@ -2,7 +2,7 @@ package com.example.benzvikler.fiveby5;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -56,14 +56,16 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Main2Activity.this, MainActivity.class);
-                startActivity(i);
-            }
-        });
+        setTitle("Customize");
+
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Main2Activity.this, MainActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
         final RadioButton strength = (RadioButton) findViewById(R.id.strength);
         final RadioButton endurance = (RadioButton) findViewById(R.id.endurance);
@@ -112,9 +114,15 @@ public class Main2Activity extends AppCompatActivity {
         start_workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), MainActivity.class);
-                i.putExtra("weightsOrBody", weightsOrBody);
-                startActivity(i);
+                if((body.isChecked() || weights.isChecked()) && (endurance.isChecked()) || strength.isChecked()){
+                    Intent i = new Intent(getBaseContext(), MainActivity.class);
+                    i.putExtra("weightsOrBody", weightsOrBody);
+                    startActivity(i);
+                }
+                else{
+                    Snackbar.make(v, "Please Select One of the Above Options", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
     }

@@ -1,10 +1,8 @@
 package com.example.benzvikler.fiveby5;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -39,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setTitle("Workout");
 
         eSwitcher = (TextSwitcher) findViewById(R.id.exerciseTextSwitcher);
         eSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
@@ -76,16 +76,16 @@ public class MainActivity extends AppCompatActivity {
         handleMakeWorkout();
         handleInitializeText();
 
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(MainActivity.this,Main2Activity.class);
-                startActivity(i);
-
-            }
-        });
+//        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent i = new Intent(MainActivity.this,Main2Activity.class);
+//                startActivity(i);
+//
+//            }
+//        });
 
 
         final ImageView bigButton = (ImageView) findViewById(R.id.centreButton);
