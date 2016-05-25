@@ -80,7 +80,8 @@
                 android:text="Free Weights"
                 android:id="@+id/weights"
                 android:layout_gravity="center_horizontal"
-                android:checked="false" />
+                android:checked="false"
+                android:backgroundTint="#cc0808" />
 
             <RadioButton
                 android:layout_width="match_parent"

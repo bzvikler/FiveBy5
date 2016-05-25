@@ -21,8 +21,4 @@
         android:width="154dp"
         android:height="48dp"
         />
-    <stroke
-        android:width="3dp"
-        android:color="#878787"
-        />
 </shape>

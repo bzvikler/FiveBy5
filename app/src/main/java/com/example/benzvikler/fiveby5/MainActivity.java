@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleInitializeText() {
-        rSwitcher.setText("" );
+        rSwitcher.setText("");
         eSwitcher.setText("");
 
         eSwitcher.setText("Get Ready!");

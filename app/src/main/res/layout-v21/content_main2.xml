@@ -46,7 +46,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Muscular Endurence (12 to 15)"
+                android:text="Muscular Endurance (12 to 15)"
                 android:id="@+id/endurance"
                 android:layout_gravity="center_horizontal"
                 android:checked="false" />
@@ -102,10 +102,10 @@
             android:layout_gravity="center_horizontal"
             android:theme="@android:style/Widget.Material.Button"
             android:layout_marginTop="30dp"
-            android:textAppearance="@color/accent_material_dark"
             android:elegantTextHeight="false"
             android:clickable="true"
-            android:textStyle="bold" />
+            android:background="@drawable/buttonshape"
+            android:contextClickable="true" />
 
     </LinearLayout>
 
